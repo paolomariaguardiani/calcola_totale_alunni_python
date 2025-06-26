@@ -1,6 +1,6 @@
 Nella cartella dei dati sono presenti vari files.
 Se iniziano con il numero 0 si riferiscono allo schema delle classi del lunedì.
-Se inizionon con il numero 1 si riferiscono al martedì, ecc., fino al venerdì
+Se iniziano con il numero 1 si riferiscono al martedì, ecc., fino al venerdì
 
 0_mensa_01.txt è lo schema della classi per la mensa piccola al lunedì al primo turno
 0_mensa_02.txt "" "" "" ... secondo turno
