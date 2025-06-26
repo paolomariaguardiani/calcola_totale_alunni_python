@@ -1,0 +1,52 @@
+Data odierna: 2025-06-26 - Giovedì
+
+
+Ecco il totale degli alunni che si fermano a mensa oggi:
+Classe 1A:          0
+Classe 1B:          1
+Classe 2A:          2
+Classe 2B:          3
+Classe 3A:          4
+Classe 3B:          5
+Classe 4A:          6
+Classe 4B:          7
+Classe 5A:          8
+Classe 5B:          9
+Classe M1:         10
+Classe M2:         11
+Classe M3:         12
+                  ---
+Totale alunni:     78
+
+
+MENSA PICCOLA - primo turno
+Classe 1A:          0
+Classe 1B:          1
+Classe 5A:          8
+Classe 5B:          9
+                  ---
+Totale:            18
+
+
+SALONE - primo turno
+Classe 4A:          6
+Classe 4B:          7
+                  ---
+Totale:            13
+
+
+MENSA PICCOLA - secondo turno
+Classe 2B:          3
+Classe 3A:          4
+Classe 3B:          5
+Classe 4A:          6
+                  ---
+Totale:            18
+
+
+SALONE - secondo turno
+Classe M1:         10
+Classe M2:         11
+Classe M3:         12
+                  ---
+Totale:            33

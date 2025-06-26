@@ -1,0 +1,52 @@
+MARTEDÌ - 15/10/2024.
+
+Ecco il totale degli alunni che si fermano a pranzo oggi:
+
+Classe 1A                   0
+Classe 1B                   1
+Classe 2A                   2
+Classe 2B                   3
+Classe 3A                   4
+Classe 3B                   5
+Classe 4A                   6
+Classe 4B                   7
+Classe 5A                   8
+Classe 5B                   9
+Classe M1                  10
+Classe M2                  11
+Classe M3                  12
+                          ---
+TOTALE:                    78
+
+
+MENSA PICCOLA - primo turno
+Classe 1A                   0
+Classe 1B                   1
+Classe 4B                   7
+                          ---
+TOTALE:                     8
+
+
+MENSA PICCOLA - secondo turno
+Classe 5A                   8
+Classe 5B                   9
+                          ---
+TOTALE:                    17
+
+
+SALONE - primo turno
+Classe 2A                   2
+Classe 2B                   3
+Classe 3A                   4
+Classe 3B                   5
+Classe 4A                   6
+                          ---
+TOTALE:                    20
+
+
+SALONE - secondo turno
+Classe M1                  10
+Classe M2                  11
+Classe M3                  12
+                          ---
+TOTALE:                    33
