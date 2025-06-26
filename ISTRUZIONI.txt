@@ -8,7 +8,7 @@ Se inizionon con il numero 1 si riferiscono al martedì, ecc., fino al venerdì
 0_salone_02.txt "" "" "" ... secondo turno
 
 Per compilare questi files .txt che verranno letti dal programma è sufficiente
-scrivere le classi in questo modo: prima A diventa 5A, mentre quinta B diventa 5B;
+scrivere le classi in questo modo: prima A diventa 1A, mentre quinta B diventa 5B;
 (è importante che le lettere siano maiuscole)
 
 
