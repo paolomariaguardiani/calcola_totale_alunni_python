@@ -3,14 +3,11 @@ from datetime import date
 
 # thanks to: https://docs.python.org/3/library/datetime.html
 data_odierna = date.today()  # Mi servirà per creare il titolo del file txt
-print(data_odierna)
 
 numero_giorno_settimana = data_odierna.weekday()
-print(numero_giorno_settimana)  # Lunedì è 0 e Domenica è 6
 
 lista_giorni_settimana = ["Lunedì", "Martedì", "Mercoledì", "Giovedì", "venerdì", "Sabato", "Domenica"]
 giorno_della_settimana = lista_giorni_settimana[numero_giorno_settimana]
-print(giorno_della_settimana)
 
 
 dati_percorso_lettura = ""
@@ -155,11 +152,13 @@ for i in range(len(schema_salone_turno_02)):
 lista_salone_turno_02.append(f"{'---':>21}")
 lista_salone_turno_02.append(f"Totale: {sum(lista_numeri_salone_02):>13}")
 
-
+### Messaggio di benvenuto ###
+print(f"\n\n\nBuongiono, oggi è {giorno_della_settimana} - {data_odierna}\n")
+print("Grazie per aver utilizzato il programma 'Calcola Totale Alunni' realizzato in Python!\n")
 
 ### Scrivo il file ###
 # Thanks to google
-nome_file = f"{data_odierna} - calcolo totale alunni.txt"
+nome_file = f"{data_odierna} - calcolo del totale degli alunni.txt"
 testo_pagina = []
 
 testo_data = f"Data odierna: {data_odierna} - {giorno_della_settimana}"
@@ -186,12 +185,16 @@ testo_salone_secondo_turno = "\n\nSALONE - secondo turno"
 testo_pagina.append(testo_salone_secondo_turno)
 testo_pagina.extend(lista_salone_turno_02)
 
-print(dati_percorso_scrittura)
 
 try:
     with open(f"{dati_percorso_scrittura}{nome_file}", "w") as file:
         for elemento in testo_pagina:
             file.write(str(elemento) + '\n')
-        print(f"Testo scritto nel file '{nome_file}'")
+        print(f"Il testo è stato scritto nel file '{nome_file}'\n\n")
 except Exception as e:
     print(f"Si è verificato un errore {e}")
+
+
+# Questa riga di testo permette di mantenere la shell sullo schermo
+# E di far chiudere il programma dopo la pressione di tasto
+tasto_premuto = input("Premere Invio per terminare il programma")
