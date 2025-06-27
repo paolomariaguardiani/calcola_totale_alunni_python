@@ -43,7 +43,6 @@ def estrai_numero(text):
     return int_numero
 
 lista_classi = ["1A", "1B", "2A", "2B", "3A", "3B", "4A", "4B", "5A", "5B", "M1", "M2", "M3"]
-lista_numeri_alunni = []
 
 
 ### CONTROLLO SE TUTTE LE CLASSI HANNO SALVATO UNA VOLTA SOLA
@@ -90,24 +89,19 @@ else:
     input("\nPremere Invio per terminare l'esecuzione del programma")
     sys.exit(1)
     
-
-if len(lista_files_xlsx) == 13:
+### Creo la lista_generale_alunni
+# Per l'allineamento del testo a destra: Thanks to https://www.geeksforgeeks.org/python/string-alignment-in-python-f-string/
+lista_numeri_alunni = []
+if is_completed:
     for file in lista_files_xlsx:
         numero = estrai_numero(file)
         lista_numeri_alunni.append(numero)
 
-# def ricava_totale_alunni(lista):
-#     totale = 0
-#     for num in lista:
-#         totale += num
-#     return totale
-
 lista_generale_alunni = []
-if len(lista_files_xlsx) == 13:
+if is_completed:
     for i in range(13):
         lista_generale_alunni.append(f"Classe {lista_classi[i]}: {lista_numeri_alunni[i]:>10}")
     
-# totale_generale_alunni = ricava_totale_alunni(lista_numeri_alunni)
 totale_generale_alunni = sum(lista_numeri_alunni)
 lista_generale_alunni.append(f"{'---':>21}")
 lista_generale_alunni.append(f"Totale alunni: {totale_generale_alunni:>6}")
@@ -166,14 +160,11 @@ for i in schema_salone_turno_02:
             lista_numeri_salone_02.append(estrai_numero(elemento))
 
 
-
 totale_mensa_01 = sum(lista_numeri_mensa_01)
 totale_salone_01 = sum(lista_numeri_salone_01)
 totale_mensa_02 = sum(lista_numeri_mensa_02)
 totale_salone_02 = sum(lista_numeri_salone_02)
 
-
-# Per l'allineamento del testo a destra: Thanks to https://www.geeksforgeeks.org/python/string-alignment-in-python-f-string/
 
 lista_mensa_turno_01 = []
 for i in range(len(schema_mensa_turno_01)):
@@ -199,11 +190,12 @@ for i in range(len(schema_salone_turno_02)):
 lista_salone_turno_02.append(f"{'---':>21}")
 lista_salone_turno_02.append(f"Totale: {sum(lista_numeri_salone_02):>13}")
 
+
 ### Messaggio di benvenuto ###
 print(f"\n\n\nBuongiono, oggi è {giorno_della_settimana} - {data_odierna}\n")
 print("Grazie per aver utilizzato il programma 'Calcola Totale Alunni' realizzato in Python!\n")
 
-### Scrivo il file ###
+### Preparo le liste di stringhe che serviranno per il file.txt ###
 # Thanks to google
 nome_file = f"{data_odierna} - calcolo del totale degli alunni.txt"
 testo_pagina = []
@@ -223,7 +215,6 @@ testo_salone_primo_turno = "\n\nSALONE - primo turno"
 testo_pagina.append(testo_salone_primo_turno)
 testo_pagina.extend(lista_salone_turno_01)
 
-
 testo_mensa_piccola_secondo_turno = "\n\nMENSA PICCOLA - secondo turno"
 testo_pagina.append(testo_mensa_piccola_secondo_turno)
 testo_pagina.extend(lista_mensa_turno_02)
@@ -232,6 +223,8 @@ testo_salone_secondo_turno = "\n\nSALONE - secondo turno"
 testo_pagina.append(testo_salone_secondo_turno)
 testo_pagina.extend(lista_salone_turno_02)
 
+
+### Scrivo finalmente il file.txt
 if is_completed == True:
     try:
         with open(f"{dati_percorso_scrittura}{nome_file}", "w") as file:
@@ -240,7 +233,6 @@ if is_completed == True:
             print(f"Il testo è stato scritto nel file '{nome_file}'\n\n")
     except Exception as e:
         print(f"Si è verificato un errore {e}")
-
 
 # Questa riga di testo permette di mantenere la shell sullo schermo
 # E di far chiudere il programma dopo la pressione di tasto

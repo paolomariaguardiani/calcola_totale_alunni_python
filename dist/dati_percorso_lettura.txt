@@ -1,5 +1,0 @@
-C:\\Salvataggi\\
-
-****
-Attenzione: sono fondamentali i due backslashes finali (in fase di scrittura)
-Attenzione: per il percorso di salvataggio in Windows ci vogliono due backslashes!
