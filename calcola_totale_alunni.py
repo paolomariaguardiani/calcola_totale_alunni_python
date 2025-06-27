@@ -1,3 +1,4 @@
+import sys
 import os
 from datetime import date
 
@@ -43,6 +44,52 @@ def estrai_numero(text):
 
 lista_classi = ["1A", "1B", "2A", "2B", "3A", "3B", "4A", "4B", "5A", "5B", "M1", "M2", "M3"]
 lista_numeri_alunni = []
+
+
+### CONTROLLO SE TUTTE LE CLASSI HANNO SALVATO UNA VOLTA SOLA
+is_completed = False  #  Variabile flag che mi permette di capire se tutte le classi hanno salvato il foglio mensa
+counter_classi = 0
+if len(lista_files_xlsx) == 13:
+    for i in lista_files_xlsx:
+        if "1A" in i:
+            counter_classi += 1
+        if "1B" in i:
+            counter_classi += 1
+        if "2A" in i:
+            counter_classi += 1
+        if "2B" in i:
+            counter_classi += 1
+        if "3A" in i:
+            counter_classi += 1
+        if "3B" in i:
+            counter_classi += 1
+        if "4A" in i:
+            counter_classi += 1
+        if "4B" in i:
+            counter_classi += 1
+        if "5A" in i:
+            counter_classi += 1
+        if "5B" in i:
+            counter_classi += 1
+        if "M1" in i:
+            counter_classi += 1
+        if "M2" in i:
+            counter_classi += 1
+        if "M3" in i:
+            counter_classi += 1
+
+if len(lista_files_xlsx) == 13:
+    if counter_classi == 13:
+        is_completed = True
+else:
+    print("\nAttenzione, si è verificato un problema:")
+    print("Non tutte le classi hanno salvato il foglio mensa oppure qualche classe "
+    "lo ha salvato più volte")
+    print("\nE' anche possibile che nella cartella siano presenti files.xlsx non utili")
+
+    input("\nPremere Invio per terminare l'esecuzione del programma")
+    sys.exit(1)
+    
 
 if len(lista_files_xlsx) == 13:
     for file in lista_files_xlsx:
@@ -185,14 +232,14 @@ testo_salone_secondo_turno = "\n\nSALONE - secondo turno"
 testo_pagina.append(testo_salone_secondo_turno)
 testo_pagina.extend(lista_salone_turno_02)
 
-
-try:
-    with open(f"{dati_percorso_scrittura}{nome_file}", "w") as file:
-        for elemento in testo_pagina:
-            file.write(str(elemento) + '\n')
-        print(f"Il testo è stato scritto nel file '{nome_file}'\n\n")
-except Exception as e:
-    print(f"Si è verificato un errore {e}")
+if is_completed == True:
+    try:
+        with open(f"{dati_percorso_scrittura}{nome_file}", "w") as file:
+            for elemento in testo_pagina:
+                file.write(str(elemento) + '\n')
+            print(f"Il testo è stato scritto nel file '{nome_file}'\n\n")
+    except Exception as e:
+        print(f"Si è verificato un errore {e}")
 
 
 # Questa riga di testo permette di mantenere la shell sullo schermo
